@@ -2,314 +2,249 @@
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=25&duration=3000&pause=1000&color=00C9A7&center=true&vCenter=true&width=700&lines=Anurag+AI+Hospital;Multilingual+Voice+AI+Assistant;Python+%7C+FastAPI+%7C+Sarvam+AI;Voice+AI+%7C+RAG+%7C+Generative+AI" alt="Animated project title" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=25&pause=1000&color=00C2FF&center=true&vCenter=true&width=800&lines=AI-Powered+Hospital+Voice+Assistant;Multilingual+Voice+Interactions;Real-Time+Speech+Processing;RAG-Powered+Hospital+Information" alt="Animated project title" />
 
-**An AI-powered voice assistant concept for hospital inquiries and appointment workflows.**
+**A multilingual AI voice assistant designed to simplify hospital inquiries and appointment workflows through natural voice interactions.**
 
 Built with Python, FastAPI, Sarvam AI, Twilio, and Retrieval-Augmented Generation (RAG).
 
-[![Python](https://img.shields.io/badge/Python-3.13+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![AI](https://img.shields.io/badge/Voice-AI-8A2BE2?style=for-the-badge)](#technology-stack)
-[![Tests](https://img.shields.io/badge/Tests-17%20Reported%20Passing-success?style=for-the-badge)](#testing)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Sarvam AI](https://img.shields.io/badge/Sarvam_AI-AI%20Voice-6C5CE7?style=for-the-badge)
+![Twilio](https://img.shields.io/badge/Twilio-Voice-F22F46?style=for-the-badge&logo=twilio&logoColor=white)
+![RAG](https://img.shields.io/badge/RAG-Generative_AI-FF8C42?style=for-the-badge)
 
 </div>
 
 ---
 
-## 📌 Overview
+## 📌 Project Overview
 
-**Anurag AI Hospital** is a customized multilingual AI voice assistant project designed to help automate routine hospital reception interactions over phone calls.
+Anurag AI Hospital is a multilingual voice-assistant project focused on making hospital information and appointment-related interactions more accessible through conversational AI.
 
-Patients may ask about hospital timings, consultation fees, doctor schedules, and appointment procedures. The assistant combines speech processing, language models, and document retrieval to process requests and generate spoken responses.
+The application combines speech processing, language-model capabilities, knowledge retrieval, and backend APIs to support voice-based interactions with hospital information.
 
-This repository is a personalized customization of an existing open-source project, with improvements to branding, configuration, Windows compatibility, error handling, testing, and documentation.
-
-> **Developer:** Anurag Deshmukh  
-> **Project domain:** Voice AI | Generative AI | AI Engineering  
-> **Original project:** [Sarvam Voice Agent by Srinath S](https://github.com/SrinathS-21/Sarvam-Voice-Agent)
-
-## 🎯 Problem Statement
-
-Hospital reception teams frequently handle repetitive calls about doctor availability, consultation timings, fees, and appointment scheduling. Answering every routine inquiry manually can increase workloads and waiting times.
-
-Traditional text-based chatbots may also be inconvenient for callers who prefer speaking over a regular phone call.
-
-## 💡 Proposed Solution
-
-The project uses a voice-based AI workflow to:
-
-- Receive and process phone-call audio through a telephony integration.
-- Convert speech into text using speech recognition.
-- Process the patient's request using an AI language model.
-- Retrieve relevant hospital information from a document knowledge base.
-- Generate a spoken response using text-to-speech.
-- Validate the required details before treating an appointment request as confirmed.
-
-The project is intended for reception assistance, not medical diagnosis or treatment.
+The project brings together practical concepts from **Artificial Intelligence, Generative AI, backend development, speech technology, and information retrieval**.
 
 ## ✨ Key Features
 
-- **Voice-first interaction:** Designed to support callers through telephone communication.
-- **Multilingual AI:** Uses Sarvam AI capabilities for supported language and speech workflows.
-- **Real-time audio streaming:** Uses Twilio Media Streams and WebSockets in the telephony architecture.
-- **Document-based responses:** Uses Google Gemini File Search for Retrieval-Augmented Generation.
-- **Appointment validation:** Checks required patient and appointment details before confirmation.
-- **Data integration:** Includes MongoDB and Google Sheets integration paths.
-- **Pronunciation normalization:** Formats selected times and medical abbreviations for clearer speech output.
-- **Windows compatibility improvements:** Includes console-encoding handling and a fallback when optional background audio dependencies are unavailable.
-- **Automated tests:** Includes tests for API endpoints, configuration, appointment validation, and knowledge-retrieval behavior.
+- 🗣️ **Multilingual voice interaction** — supports speech-based conversations using integrated voice AI services.
+- 🎙️ **Speech-to-Text (STT)** — converts incoming speech into text.
+- 🧠 **AI-powered conversation** — processes user requests using an integrated language model.
+- 📚 **Retrieval-Augmented Generation (RAG)** — uses hospital knowledge sources to help answer relevant inquiries.
+- 🔊 **Text-to-Speech (TTS)** — generates spoken responses.
+- ☎️ **Telephony integration** — connects voice interactions through Twilio Media Streams.
+- ⚡ **Real-time communication** — uses FastAPI and WebSockets for streaming interactions.
+- 🏥 **Hospital information support** — organizes knowledge for common hospital-related questions and appointment workflows.
+- 🗄️ **Database integration** — uses MongoDB for supported application data workflows.
 
-*Live functionality depends on configuration, credentials, and verification of the relevant external services.*
-
-## 🏗️ System Architecture
-
-```mermaid
-flowchart TD
-    A[Patient Phone Call] <--> B[Twilio Voice Gateway]
-    B <--> C[WebSocket Audio Stream]
-    C <--> D[FastAPI Backend]
-    D <--> E[Audio Processing]
-    E <--> F[Sarvam AI Speech Recognition]
-    F --> G[Language Model Processing]
-    G <--> H[Gemini File Search RAG]
-    H <--> I[Hospital Knowledge Documents]
-    G --> J[Text-to-Speech]
-    J --> K[Audio Processing]
-    K --> B
-    G --> L[Appointment Validation]
-    L --> M[MongoDB / Google Sheets]
-```
-
-### How the workflow operates
-
-1. A patient initiates a phone call.
-2. Twilio streams audio to the backend over a WebSocket connection.
-3. The backend processes the audio and connects to the configured speech and AI services.
-4. Relevant hospital questions can trigger document retrieval through RAG.
-5. The assistant generates a response and converts it into speech.
-6. Appointment requests are validated before the system treats them as confirmed.
-7. Configured data integrations can store appointment information.
-
-The diagram represents the intended application architecture. Each external integration must be configured and tested before it can be considered operational.
+> Feature availability depends on configuration, credentials, and the status of the integrated services. Verify each workflow in your deployed environment before presenting it as production-ready.
 
 ## 🛠️ Technology Stack
 
 | Technology | Purpose |
 |---|---|
-| Python | Main programming language |
-| FastAPI | Backend and API endpoints |
-| WebSockets | Bidirectional real-time communication |
-| Twilio Media Streams | Telephone audio streaming |
-| Sarvam AI | Speech recognition, language processing, and speech generation |
-| Google Gemini File Search | Retrieval-Augmented Generation (RAG) |
-| MongoDB / Motor | Database integration |
-| Google Sheets | Optional appointment record integration |
-| APScheduler | Scheduled task support |
-| Pytest | Automated testing |
-| ffmpeg | Optional audio-processing support |
+| Python | Core application logic |
+| FastAPI | Backend API and application server |
+| WebSockets | Real-time bidirectional communication |
+| Twilio Media Streams | Telephony audio streaming |
+| Sarvam AI | Speech recognition, speech generation, and language-model capabilities |
+| Gemini File Search / RAG | Retrieval from configured knowledge sources |
+| MongoDB and Motor | Database and asynchronous database access |
+| Google Sheets integration | Optional external workflow integration |
+| APScheduler | Scheduled tasks, where configured |
+| HTML, CSS and JavaScript | Browser-based interaction interfaces |
+
+## 🏗️ System Architecture
+
+```mermaid
+flowchart TD
+    A[Patient / Caller] --> B[Twilio Voice]
+    B --> C[Media Streams / WebSocket]
+    C --> D[FastAPI Backend]
+    D --> E[Speech-to-Text]
+    E --> F[AI Conversation Layer]
+    F --> G[RAG / Hospital Knowledge]
+    G --> H[Response Generation]
+    H --> I[Text-to-Speech]
+    I --> C
+    C --> J[Spoken Response]
+    D --> K[(MongoDB)]
+    D --> L[Optional Google Sheets Workflow]
+```
+
+### 🔄 How It Works
+
+1. A caller initiates a voice interaction.
+2. The audio stream is received through the configured telephony integration.
+3. Speech recognition converts the audio into text.
+4. The backend processes the request using the configured AI conversation workflow.
+5. The retrieval layer provides relevant information from available hospital knowledge sources.
+6. The response is converted into speech.
+7. The generated audio is returned through the configured voice channel.
 
 ## 📂 Project Structure
 
+The structure below is representative. Keep the exact paths synchronized with the files in your repository.
+
 ```text
 anurag-ai-hospital-voice-assistant/
-├── call_trigger/
-│   ├── test_call.html
-│   ├── knowledge_manager.html
-│   ├── trigger_call.py
-│   └── README.md
-├── knowledge_docs/
-│   ├── hospital_faqs.txt
-│   ├── doctor_schedule.txt
-│   └── pricing_guide.txt
-├── modules/
-│   ├── audio_utils.py
-│   ├── mongodb.py
-│   ├── google_sheets.py
-│   └── google_file_search.py
-├── tests/
-│   ├── test_api_endpoints.py
-│   ├── test_appointment_validation.py
-│   ├── test_config_and_normalization.py
-│   └── test_knowledge_retrieval.py
-├── config.py
+│
 ├── realtime_app.py
-├── upload_knowledge.py
+├── config.py
 ├── requirements.txt
 ├── pyproject.toml
+├── setup.py
 ├── .env.example
 ├── .gitignore
-├── LICENSE
+│
+├── knowledge/
+│   └── Hospital knowledge documents
+│
+├── upload_knowledge.py
 ├── PROJECT_WALKTHROUGH.md
-├── CUSTOMIZATIONS.md
-└── README.md
+├── tests/
+│   └── Test modules
+│
+├── README.md
+└── LICENSE
 ```
 
-*This tree summarizes the reported project layout. Verify the actual filenames in the repository before relying on every entry.*
+## 🚀 Getting Started
 
-## ⚙️ Installation and Setup
+### 1. Prerequisites
 
-### Prerequisites
+Install the following:
 
-- Windows 10/11, VS Code, and PowerShell.
-- A Python version compatible with the project's dependencies.
-- API credentials for the external services you intend to use.
-- Optional: ffmpeg for supported audio-processing features.
+- Python version supported by the project dependencies
+- Git
+- A code editor such as VS Code
+- API credentials for the services you intend to use
+- A Twilio account and configured voice webhook for telephony testing
+- MongoDB access if database features are enabled
 
-> **Python compatibility:** The project was tested in the reported environment using Python 3.13.3. Check `pyproject.toml` and `requirements.txt` if installing on another Python version.
+### 2. Clone the Repository
 
-### 1. Download the repository
+```bash
+git clone https://github.com/AnuragPravinDeshmukh/anurag-ai-hospital-voice-assistant.git
+cd anurag-ai-hospital-voice-assistant
+```
 
-Download the ZIP from the GitHub repository and extract it, or clone it if Git is installed.
+### 3. Create a Virtual Environment
 
-Open the extracted project folder in VS Code.
-
-### 2. Create a virtual environment
-
-Open the VS Code terminal:
+**Windows PowerShell**
 
 ```powershell
 python -m venv .venv
-```
-
-Activate it:
-
-```powershell
 .\.venv\Scripts\Activate.ps1
 ```
 
-If PowerShell blocks activation, use this command for the current terminal session:
+If PowerShell blocks activation, use Command Prompt or activate the environment using the method supported by your system.
 
-```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-.\.venv\Scripts\Activate.ps1
-```
+### 4. Install Dependencies
 
-### 3. Install dependencies
-
-```powershell
+```bash
 python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
-### 4. Configure environment variables
+### 5. Configure Environment Variables
 
-Create a local `.env` file from the provided template:
+Create a local `.env` file using `.env.example` as a template.
 
-```powershell
-Copy-Item .env.example .env
+Add only the credentials required by the configured services, such as:
+
+```env
+SARVAM_API_KEY=
+TWILIO_ACCOUNT_SID=
+TWILIO_AUTH_TOKEN=
+GEMINI_API_KEY=
+MONGODB_URI=
 ```
 
-Open `.env` and configure only the credentials required for the services you want to use.
+Use the exact variable names expected by the application's configuration. These names are examples and may need to be adjusted to match the code.
 
-Typical integrations may require:
+**Security:** Never commit `.env`, API keys, passwords, or access tokens to GitHub.
 
-- `SARVAM_API_KEY`
-- `GOOGLE_API_KEY`
-- `TWILIO_ACCOUNT_SID`
-- `TWILIO_AUTH_TOKEN`
-- `TWILIO_PHONE_NUMBER`
-- `MONGODB_URI`
-- `GOOGLE_SHEETS_WEBHOOK_URL`
-- `NGROK_URL`
+### 6. Start the Application
 
-Check `.env.example` and the application configuration for the exact supported variable names and which ones are required.
+For a FastAPI application exposed through `realtime_app.py`, the command may be:
 
-**Security:** Never commit your real `.env` file, API keys, tokens, or database credentials to GitHub.
-
-### 5. Run the diagnostic check
-
-```powershell
-python setup.py
+```bash
+uvicorn realtime_app:app --reload
 ```
 
-### 6. Run automated tests
+Use the actual FastAPI object name and startup instructions defined in your source code.
 
-```powershell
-python -m pytest
+If enabled, the API documentation is typically available at:
+
+```text
+http://127.0.0.1:8000/docs
 ```
 
-### 7. Start the application
+A working local server alone does not confirm that external voice, AI, database, or telephony integrations are fully operational.
 
-```powershell
-python realtime_app.py
-```
+## 🧪 Testing and Validation
 
-If startup succeeds, open:
+The project includes automated tests for supported application logic.
 
-- Health check: [http://localhost:7000/health](http://localhost:7000/health)
-- API documentation: [http://localhost:7000/docs](http://localhost:7000/docs)
+Recommended validation areas:
 
-These local URLs work only while the application is running on your computer.
+- Application startup and configuration
+- Request handling and response formatting
+- Speech-processing workflow logic
+- Knowledge retrieval behavior
+- Database operations
+- External service error handling
+- End-to-end voice interaction through Twilio
 
-### 8. Test the available interfaces
+Record the actual test command, results, and any limitations from your latest run here. Mock-based tests validate the code paths they exercise but do not prove that live external services work correctly.
 
-Open the HTML files from the `call_trigger/` directory in your browser to inspect the available testing interfaces.
+## 🎯 Learning Outcomes
 
-Live telephone testing requires the appropriate Twilio configuration and a publicly reachable callback URL. A local application or HTML page alone does not establish that a real phone call works.
+This project provides practical exposure to:
 
-## 🧪 Testing
+- Building Python backend applications with FastAPI
+- Understanding real-time communication with WebSockets
+- Integrating third-party AI and speech services
+- Applying Retrieval-Augmented Generation to domain-specific information
+- Connecting telephony services to AI workflows
+- Managing application configuration and secrets
+- Testing integrated application components
+- Understanding the challenges of deploying AI-enabled applications
 
-The reported local test run produced the following result:
+## 🔮 Future Improvements
 
-| Test module | Purpose |
-|---|---|
-| `test_api_endpoints.py` | API endpoint behavior and payload validation |
-| `test_appointment_validation.py` | Appointment information extraction and validation |
-| `test_config_and_normalization.py` | Configuration, spoken-time formatting, and abbreviation handling |
-| `test_knowledge_retrieval.py` | Knowledge-retrieval behavior and error fallbacks |
+- Add more comprehensive multilingual testing.
+- Improve response accuracy through evaluation of the hospital knowledge base.
+- Add robust appointment confirmation and scheduling validation.
+- Improve logging, monitoring, and failure recovery.
+- Add authentication and access controls where required.
+- Deploy the application with secure configuration and production monitoring.
+- Evaluate latency, response quality, and reliability under realistic call conditions.
 
-**Reported result: 17 tests passed, 0 failures.**
+## 👨‍💻 About the Developer
 
-Some external-service behavior was tested using mocks. These results validate selected local application logic; they do not prove that live telephony, speech services, database persistence, or appointment reminders work end to end.
+**Anurag Deshmukh**
 
-## 🔐 Safety and Limitations
+Artificial Intelligence Engineering | Python | Data Science | Generative AI
 
-- This is a software project and demo, not a replacement for professional medical care.
-- The assistant must not diagnose conditions, prescribe medicines, or make treatment decisions.
-- Hospital schedules, pricing, doctors, and service details in the sample knowledge base are demo information.
-- Appointment confirmation must depend on successful validation and the actual booking operation.
-- External APIs require valid credentials and network access.
-- Performance claims must be measured in the configured runtime environment before being reported as results.
-- Do not store real patient data in a public demo without appropriate privacy, security, and legal safeguards.
+Interested in building practical AI applications that combine machine learning, language models, speech technology, and backend development.
 
-## 🚀 Future Improvements
+- GitHub: [AnuragPravinDeshmukh](https://github.com/AnuragPravinDeshmukh)
 
-- Expand and validate support for additional Indian languages.
-- Improve observability and end-to-end latency measurement.
-- Add more integration and failure-recovery tests.
-- Integrate with authorized hospital scheduling systems.
-- Strengthen authentication, access control, and privacy protections.
-- Evaluate speech recognition quality and response accuracy with representative test cases.
+## 📄 License and Attribution
 
-## 👨‍💻 Developer
+Review the repository's existing license and attribution requirements before redistributing or modifying its code. Preserve applicable notices and acknowledge the original project where required.
 
-**Anurag Deshmukh**  
-B.Tech Artificial Intelligence
-
-This project is part of my learning and portfolio work in Python, backend development, Voice AI, and Generative AI integration.
-
-## 🙏 Acknowledgment and Attribution
-
-This repository is customized from the open-source project:
-
-**[Sarvam Voice Agent — SrinathS-21](https://github.com/SrinathS-21/Sarvam-Voice-Agent)**
-
-The upstream implementation and original architecture are credited to the original author. My changes focus on project personalization, configuration, Windows compatibility, error handling, tests, and documentation.
-
-Please refer to the included `LICENSE` file for the applicable license and notices.
-
-## 📄 License
-
-See the [LICENSE](LICENSE) file for the complete license terms. Preserve the original author's copyright and attribution notices when redistributing the project.
+This repository documents the hospital voice-assistant implementation and its development work. Refer to the source files and project walkthrough for the specific implementation details.
 
 ---
 
 <div align="center">
 
-**Built for learning, experimentation, and responsible AI development.**
+**Built with Python and AI technologies**
 
-⭐ If you find this project useful, consider starring the repository.
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:007CF0,100:00DFD8&height=100&section=footer" width="100%" alt="Decorative animated-style footer" />
 
 </div>
